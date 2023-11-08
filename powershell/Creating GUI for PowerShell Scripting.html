@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>access</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../style.css'>
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light  navbar-1">
+        <div class="container top-nav">
+          <div class="left">
+            <ul class="navbar-nav left-ul">
+                <li class="nav-item nav-item-1">
+                    <a class="nav-link active link-1" aria-current="page" href="#"></i>#1 Trusted Cybersecurity News Platform</a>
+                </li>
+            </ul>    
+          </div>
+          <div class="left">
+            <ul class="navbar-nav  left-ul">
+                <li class="nav-item nav-item-1">
+                    <a class="nav-link active link-1" aria-current="page" href="#"></i>Followed by 3.76+ million<i class="fa-brands fa-twitter"></i><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-facebook"></i></a>
+                </li>
+            </ul>    
+          </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-2">
+        <div class="container">
+          <a class="navbar-brand logo-img " href="#">admincentric</a>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-2 navbar-3">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse banner-slider-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav my-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active link-2 first-link" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active link-2" aria-current="page" href="#">Active Directory</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link active link-2" aria-current="page" href="#">Hyper-V</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link-2" aria-current="page" href="powershell-index.html">PowerShell</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link-2" aria-current="page" href="#">Free Tools</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link-2" aria-current="page" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="container-fluid banner-section">
+        <div class="container banner-section-inner">
+            <div class="row banner-section-row">
+                <div class="col-md-8 col-12 banner-section-box padd-left">
+                    <div class="card access-card">
+                        <h1>Creating GUI for PowerShell Scripting</h1>
+                        <div class="date-box">
+                            <div class="date-left">
+                                <span><i class="fa-solid fa-calendar-days"></i>Oct 06, 2023</span>
+                                <span><i class="fa-solid fa-user"></i>The Hacker News</span>
+                            </div>
+                            <div class="date-right">
+                                <span>Data Security / Compliance</span>
+                            </div>
+                        </div>
+                        <p>A simple GUI for handling PowerShell scripts can prove useful if your team has PowerShell newbies. GUI-based PowerShell scripts can help newbies get started with PowerShell easily and move towards executing complex scripts later on. But to create such helpful GUI-based PowerShell scripts, you should understand how Windows forms can be handled in PowerShell scripts. </p>
+                        <p>So, in this blog, let’s try to understand how to create a simple PowerShell script which invokes a windows form and gets the user input.</p>
+
+
+                        <p><b>Note:</b> Our simple GUI-based Windows form dependent PS script is going to take in the user input and output the same on the PowerShell console. </p>
+
+                        <h2 id="Framework-classes-for-Windows">Adding .NET Framework classes for Windows Forms</h2>
+
+                        <P>You need to load .Net Framework classes System.Windows.Forms and System.Drawing to create the Windows form. You need the System.Winows.Forms class to create an instance of the Windows form and the System.Drawing class for drawing the form. You can load these two classes into your script as follows:  </P>
+                        <ul>
+                            <li style="list-style: none;">Add-Type -AssemblyName System.Windows.Forms</li>
+                            <li style="list-style: none;">Add-Type -AssemblyName System.Drawing </li>
+                        </ul>
+                        <p>Try running your PowerShell script at this point. Nothing would happen, because we are yet to create the Windows form. </p>
+                        <p><b>Note:</b></p>
+                            <ul>
+                                <li>Remember to save your script with a .ps1 extension.</li>
+                                <li>To run your PS script, navigate to the location where your .ps1 file is located, and execute it as shown in the image below.</li>
+                                <div class="access-img"><img src="img/loading-windows-classes.JPG" class="img-fluid" alt=""></div>
+                            </ul>
+
+                        <h2 id="Creating-and-Invoking-the-Windows-Form">Creating and Invoking the Windows Form</h2>
+                        <ol>
+                            <li>Using the <b> New-Object</b> cmdlet you can create a Windows form instance and save it in a PowerShell variable <b>$form</b> as shown in the image.</li>
+                            <div class="access-img"><img src="img/window-method.jpg" class="img-fluid" alt=""></div>
+                            <li>Now add the <b>ShowDialog()</b> method to the form as shown in the image. This method will <b>invoke the form</b> when you run the script. </li>
+                            <div class="access-img"><img src="img/windows-form-method.JPG" alt=""></div>
+                            <li><b>Save</b> your file and <b>run</b> the script. You should get an <b>empty form</b> as shown in the image. </li>
+                            <div class="access-img"><img src="img/empty-windows-form.png" class="img-fluid" alt=""></div>
+                            <p style="padding-top: 20px;"><b>Why is the form empty? </b></p>
+                            <p>Because we haven’t added anything to it yet. So let’s add some text to our Windows form, and give it a size and position it on the screen.</p>
+                            <p><b>Note:</b> Even though the form is empty, when you close it, you’ll notice that the cancel action being registered on your PS console. What you see is default behavior of Windows forms. </p>
+                            <li> You can make use of the<b> Text, Size</b> and <b>StartPosition</b> properties of the form object to add text, size and position the Windows form as shown in the image. </li>
+                            <div class="access-img"><img src="img/adding-text-size-form-position.JPG" class="img-fluid" alt=""></div>
+                            <li>Now run your script. The form will now contain a<b> title</b> and its<b> size</b> would be larger, since we modified the form’s object’s size property. </li>
+                            <div class="access-img"><img src="img/adding-form-text.png" class="img-fluid" alt=""></div>
+                            <p>Now that the form for our PS script is ready, it’s time to add some controls (buttons) to it. </p>
+                        </ol>   
+                        
+                        <h2 id="Adding-Form-Controls-Ok-and-Cancel-buttons">Adding Form Controls:</h2>
+                        <h3 id="Adding-Ok-Button">Adding Ok Button</h3>
+                        <ol>
+                            <li>Using the<b> New-Object</b> cmdlet you can create a Windows forms button instance and save it in a PowerShell variable <b>$okButton</b> as shown in the image.</li>
+                            <div class="access-img"><img src="img/adding-windows-form-button.png" class="img-fluid" alt=""></div>
+                            <li>Now add <b>location, size</b> and <b>text</b> properties to the button as shown in the image.</li>
+                            <div class="access-img"><img src="img/adding-button-properties.png" class="img-fluid" alt=""></div>
+                            <li>To make the Windows form accept the button you created, you should set the<b> AcceptButton</b> property of the form to the button you just created<b> ($okButton).</b> </li>
+                            <div class="access-img"><img src="img/accept-button-property.png"  class="img-fluid"></div>
+                            <li>Now you can <b>add the button</b> to the Windows form by including the following line.</li>
+                            <div class="access-img"><img src="img/adding-button-to-form.png" class="img-fluid" alt=""></div>
+                            <li><b>Save</b> and run your script. The button you added shows up. But nothing happens when you click on it. This is because we haven’t added any event to the button yet. </li>
+                            <div class="access-img"><img src="img/adding-button-to-form-2.png" class="img-fluid" alt=""></div>
+                            <li>To associate an event with the button, you should set its <b>DialogResult</b> property to <b>[System.Windows.Forms.DialogResult]::OK</b> as shown in the image. Remember to add this line of code before you make the form accept the button you created. </li>
+                            <div class="access-img"><img src="img/adding-ok-button-event.png" class="img-fluid" alt=""></div>
+                            <li>Now <b>save and run your script again.</b> This time the button works and <b>logs the OK action</b> (wired to the button by you) on your PS console.</li>
+                            <div class="access-img"><img src="img/working-ok-button.JPG" class="img-fluid" alt=""></div>
+                            <p>Now, let’s add the Cancel button to the form.</p>
+                        </ol>
+                        <h3 id="Adding-Cancel-button">Adding Cancel Button</h3>
+                        <p>The process remains pretty much the same as above. The only difference is, this time, you should associate the cancel event, instead of the OK event, to the button. The code you should be including is shown in the image. </p>
+                        <ul>
+                            <li>First you create the window’s <b>button</b> instance. Then add <b>properties</b> (location, size and text). After this, you associate the <b>cancel</b> event that needs to be triggered when the button is clicked. Then make the form <b>accept</b> the newly created button. </li>
+                            <div class="access-img"><img src="img/adding-cancel-button.png" class="img-fluid " alt=""></div>
+                            <li>If you <b>save and run</b> your script, you’ll see the form has two buttons: <b>OK</b> and <b>Cancel.</b> And since you have wired up both the buttons to Ok and Cancel actions, you’ll notice these actions <b>get logged into your PS console</b> (as shown in the images) when you <b>click on the respective buttons.</b> </li>
+                            <div class="access-img"><img src="img/ok_and_cancel_btns.png"  class="img-fluid"></div>
+                            <div class="access-img"><img src="img/button-actions.JPG" class="img-fluid"></div>
+                        </ul>
+
+                        <h3 id="Adding-label-to-form">Adding Label to the Form</h3>
+                        <ul>
+                            <li>First you create the windows form’s <b>label</b> instance. Then add <b>properties</b> (location, size and text) to the label. And finally, add the label to the form.  </li>
+                            <div class="access-img"><img src="img/adding-label-to-form-code.png" class="img-fluid" alt=""></div>
+                            <li>If you <b>save and run</b> your script, you’ll see the <b>form now contains a label</b> which reads ‘Please enter the information in the space below as shown in the image. </li>
+                            <div class="access-img"><img src="img/adding-label-to-form.png" class="img-fluid" alt=""></div>
+                        </ul>
+
+                        <h3 id="Adding-textbox-to-form">Adding Textbox to the Form</h3>
+                        <ul>
+                            <li>First you create the windows form’s <b>textbox</b> instance. Then add <b>properties</b> (location, size and text) to the textbox. And finally, add the textbox to the form.  </li>
+                            <div class="access-img"><img src="img/adding-textbox-to-form-code.png" class="img-fluid" alt=""></div>
+                            <li>If you <b>save and run</b> your script, you’ll see the <b>form now contains a textbox</b> that allows user to enter the input.</li>
+                            <div class="access-img"><img src="img/adding-textbox-to-form.JPG" class="img-fluid" alt=""></div>
+                        </ul>
+                        <p><b>Selecting the User Input</b></p>
+                        <ul>
+                            <li>To select the user input, you need to include the following line of code, just below the textbox related code.</li>
+                            <div class="access-img"><img src="img/user_input_selection.png" class="img-fluid" alt=""></div>
+                        </ul>
+
+                        <h2 id="Writing-simple-logic-for-handling">Writing simple logic for handling the user input </h2>
+                        <p>Now that our form controls are ready, let’s add a simple if-else condition to determine the script’s outcome based on the user input. If the user enters some text and clicks the Ok button, whatever that was entered should display on the PS console. If the user simple clicks the cancel button, then the message ‘you cancelled the operation’ should be displayed. </p>
+                        <ul>
+                            <li>Since<b> ShowDialog()</b> method of the form is the one that is going to receive or handle the user input, we will save it in a separate PS variable called <b>$result</b> and equate this variable to Windows forms <b>Ok</b> and<b> Cancel</b> events using an <b>if-else condition</b> as shown in the image below.</li>
+                            <div class="access-img"><img src="img/if-else-skeleton.png" class="img-fluid" alt=""></div>
+                            <li>If the user <b>clicks the Ok button</b> [which translates to action<b> [System.Windows.Forms.DialogResult]::OK</b> in Windows Forms terminology, we are going to grab the text which the user entered in the input box and display it on the PS console by using the <b>Write-Host</b> cmdlet. </li>
+                            <div class="access-img"><img src="img/if-condition.png" class="img-fluid" alt=""></div>
+                            <li>If the user <b>clicks the cancel button</b> [which translates to action <b>[System.Windows.Forms.DialogResult]::Cancel</b> in Windows Forms terminology, we are going to display the message<b> “you cancelled the operation”</b> on the PS console by using the <b>Write-Host </b> cmdlet. </li>
+                            <div class="access-img"><img src="img/else-condition.png" class="img-fluid" alt=""></div>
+                            <li><b>Save and run</b> your script. When you enter some text and <b>click the Ok button,</b> the text you entered gets displayed on the PS console. If you choose to <b>click the Cancel button,</b> the message ‘you cancelled the operation’ gets displayed. </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 banner-section-box">
+                    <div class="card banner-section-card card-1">
+                        <h3><a href="../index.html">Home</a></h3>
+                        <h3><a href="">Active Directory</a></h3>
+                        <h3><a href="">Hyper-V</a></h3>
+                        <h3><a href="powershell-index.html">PowerShell</a></h3>
+                        <h3><a href="">Free Tools</a></h3>
+                        <h3><a href="">Contact</a></h3>
+                    </div>
+                    <div class="card banner-section-card card-2">
+                        <h5>Trending News</h5><div class="line"></div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>CISA Warns of Active Exploitation of JetBrains and Windows Vulnerabilities</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Apple Rolls Out Security Patches for Actively Exploited iOS Zero-Day Flaw</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Chinese Hackers Target Semiconductor Firms in East Asia with Cobalt Strike</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Gaza-Linked Cyber Threat Actor Targets Israeli Energy and Defense Sectors
+                            </h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>GoldDigger Android Trojan Targets Banking Apps in Asia Pacific Countries</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Looney Tunables: New Linux Flaw Enables Privilege Escalation on Major Distributions
+                            </h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>New OS Tool Tells You Who Has Access to What Data</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>North Korea's Lazarus Group Launders $900 Million in Cryptocurrency</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Microsoft Warns of Cyber Attacks Attempting to Breach Cloud via SQL Server Instance</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Cisco Releases Urgent Patch to Fix Critical Flaw in Emergency Responder Systems</h1>
+                        </div>
+                    </div>
+                    <div class="card banner-section-card card-2">
+                        <h5>Popular Resources</h5><div class="line"></div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>How to Prevent an API Breach – Get Expert Strategies</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Not All SaaS is Secure - Learn How to Guard Yours with this Complete Guide</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Why Everyone's Talking About Virtual CISOs in 2023 — Exclusive Insights Inside</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Watch Now - Expert Talk on What REALLY Matters in AI Security</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side-table-box">
+                <div class="table-content">
+                    <h5 class="menu-icon">Table of contents</h5>
+                </div>
+            </div>
+            <div class="scroll-box menu">
+                <div class="icons-scroll">
+                    <i class="bi bi-x-circle x"></i>
+                </div>
+                <h1>table-content</h1>
+                <ul>
+                    <li><a href="#Framework-classes-for-Windows">Adding .NET Framework classes for Windows Forms  </a>
+                    </li>
+                    <li><a href="#Creating-and-Invoking-the-Windows-Form">Creating and Invoking the Windows Form </a>
+                    </li>
+                    <li><a href="#Adding-Form-Controls-Ok-and-Cancel-buttons">Adding Form Controls: Ok and Cancel buttons </a>
+                        <ul>
+                            <li><a href="#Adding-Ok-Button">Adding Ok button</a></li>
+                            <li><a href="#Adding-Cancel-button">Adding Cancel button</a></li>
+                            <li><a href="#Adding-label-to-form">Adding label to form </a></li>
+                            <li><a href="#Adding-textbox-to-form">Adding textbox to form </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Writing-simple-logic-for-handling">Writing simple logic for handling the user input</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn"><a href="">Next Page <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+    <div class="container-fluid footer-section">
+        <div class="container footer-section-inner">
+            <h1>Connect with us!</h1>
+            <div class="row footer-1-row">
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/twitter-icon.png" alt=""></div>
+                        <h2>900,000 Followers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/facebook.png" alt=""></div>
+                        <h2>1,950,000 Followers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/in-icon.png" alt=""></div>
+                        <h2>480,000 Followers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/youtub-icon.png" alt=""></div>
+                        <h2>20,900 Subscribers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/instagram-icon.png" alt=""></div>
+                        <h2>145,000 Followers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/telegrame-icon.jpg" alt=""></div>
+                        <h2>115,000 Subscribers</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer-row-2">
+                <div class="col-md-3 col-6 footer-row-2-box">
+                    <div class="card footer-row-2-card">
+                        <h6>Company</h6>
+                        <ul>
+                            <li>About THN</li>
+                            <li>Advertise with us</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 footer-row-2-box">
+                    <div class="card footer-row-2-card">
+                        <h6>Pages</h6>
+                        <ul>
+                            <li>Webinars</li>
+                            <li>Deals Store</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 footer-row-2-box">
+                    <div class="card footer-row-2-card">
+                        <h6>Deals</h6>
+                        <ul>
+                            <li>Hacking</li>
+                            <li>Development</li>
+                            <li>Android</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12 footer-row-2-box">
+                    <div class="card footer-row-2-card">
+                        <a href=""><i class="fa-solid fa-wifi"></i>RSS Feeds</a>
+                        <a href=""><i class="fa-solid fa-envelope"></i>Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="line-2"></div>
+            <p>© The Hacker News, 2023. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', function () {
+            //alert('haiii')
+            document.querySelector('.menu').classList.remove('hide');
+            //alert('clicked')
+            //document.querySelector('.menu').style.transform = "translateX(-110%)";
+            document.querySelector('.menu').classList.toggle('move-menu');
+        })
+
+        document.querySelector('.x').addEventListener('click', function () {
+            document.querySelector('.menu').classList.add('hide');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>access</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../style.css'>
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light  navbar-1">
+        <div class="container top-nav">
+          <div class="left">
+            <ul class="navbar-nav left-ul">
+                <li class="nav-item nav-item-1">
+                    <a class="nav-link active link-1" aria-current="page" href="#"></i>#1 Trusted Cybersecurity News Platform</a>
+                </li>
+            </ul>    
+          </div>
+          <div class="left">
+            <ul class="navbar-nav  left-ul">
+                <li class="nav-item nav-item-1">
+                    <a class="nav-link active link-1" aria-current="page" href="#"></i>Followed by 3.76+ million<i class="fa-brands fa-twitter"></i><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-facebook"></i></a>
+                </li>
+            </ul>    
+          </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-2">
+        <div class="container">
+          <a class="navbar-brand logo-img " href="#">admincentric</a>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-2 navbar-3">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse banner-slider-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav my-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active link-2 first-link" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active link-2" aria-current="page" href="#">Active Directory</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link active link-2" aria-current="page" href="#">Hyper-V</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link-2" aria-current="page" href="powershell-index.html">PowerShell</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link-2" aria-current="page" href="#">Free Tools</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link-2" aria-current="page" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="container-fluid banner-section">
+        <div class="container banner-section-inner">
+            <div class="row banner-section-row">
+                <div class="col-md-8 col-12 banner-section-box padd-left">
+                    <div class="card access-card">
+                        <h1>Managing Folders and Files with Windows PowerShell </h1>
+                        <div class="date-box">
+                            <div class="date-left">
+                                <span><i class="fa-solid fa-calendar-days"></i>Oct 06, 2023</span>
+                                <span><i class="fa-solid fa-user"></i>The Hacker News</span>
+                            </div>
+                            <div class="date-right">
+                                <span>Data Security / Compliance</span>
+                            </div>
+                        </div>
+                        <p>In this article, let’s take a look at the PowerShell cmdlets that help you work with folders and files. We’ll begin with retrieving a list of existing folders/files using the Get-ChildItem cmdlet, then focus on how you can filter the obtained results, and finally move on to how you can create/delete files and folders. </p>
+
+          
+
+                        <h2 id="Retrieving-files-and-folders">Retrieving files and folders using Get-Item and Get-ChildItem cmdlets</h2>
+                        <P>You have two cmdlets that help you with retrieving folder and file information: Get-Item and Get-ChildItem. Get-ChildItem is more useful than Get-Item, as Get-ChildItem helps you retrieve info about sub-folders residing within the parent folder as well. </P>
+
+                        <h3 id="Using-Get-Item">Using Get-Item</h3>
+                        <p>The syntax for Get-Item is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput">Get-Item  <span  style="color: white;">&lt; folder_name &gt;</span> </span>
+                        <button onclick="myFunction()">Copy</button>
+                        </div>
+                        <p>This above code works if you are in the directory within which the folder resides. If not, you’ll have to pass the full path of the folder to the -Path parameter as shown below: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput11">Get-Item -Path  <span  style="color: white;"> “d: &lt; /folder_name &gt;”</span> </span>
+                        <button onclick="myFunction11()">Copy</button>
+                        </div>
+                        <p>Remember that output of Get-Item cmdlet would be minimal unless you pipe the result through to some other command (like format-list) to extract more information about the folders/files you are querying as shown in the image below. </p>
+                        <div class="access-img"> 
+                            <img src="img/get-item-cmdlet.JPG" class="img-fluid" alt="">
+                        </div>
+
+                        <h3 id="Using-Get-ChildItem">Using Get-ChildItem </h3>
+                        <p>The syntax for Get-Item is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput12">Get-ChildItem <span  style="color: white;">  &lt; folder_name &gt;</span> </span>
+                        <button onclick="myFunction12()">Copy</button>
+                        </div>
+                        <p>This above code works if you are in the directory within which the folder resides. If not, you’ll have to pass the full path of the folder to the -Path parameter as shown below: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput13">Get-ChildItem -Path <span  style="color: white;">“d:/  &lt; folder_name &gt;”</span> </span>
+                        <button onclick="myFunction13()">Copy</button>
+                        </div>
+                        <p>Remember that output of Get-ChildItem cmdlet would be minimal unless you pipe the result through to some other command (like format-list) to extract more information about the folders/files you are querying as shown in the image below. </p>
+                        <div class="access-img"><img src="img/get-childitem-cmdlet.JPG" class="img-fluid" alt=""></div>
+
+                        <h3 id="Get-Item-Vs-Get-ChildItem">Get-Item Vs Get-ChildItem </h3>
+                        <p>Get-Item queries for specific folder (or file info). Get-ChildItem queries for the sub-folders/files that reside within a given folder. The major difference between the two cmdlets is that with Get-ChildItem cmdlet, you get to pass the -Recurse parameter, which pulls out not just the sub-folders, but all the children that reside within these sub-folders as well as shown in the image below. </p>
+                        <div class="access-img"><img src="img/get-childitem-with-recurse.JPG" class="img-fluid" alt=""></div>
+
+                        <h2 id="Filtering-the-results">Filtering the results obtained </h2>
+                        <p>Querying for information returns large amounts of data. So you have to apply filters to get what you are looking for. Some of popular ways of doing this are: </p>
+                        
+                        <h3 id="Using-the-filter-parameter">Using the -filter parameter:</h3>
+                        <p>The simplest way to filter the data being returned is to make use of the -filter parameter. </p>
+                        <h4 id="Searching-for-files-of-specific-pattern">Searching for files of specific pattern:</h4>
+                        <p>You can look for files ending with a common extension (like .txt for example) by passing the ‘.txt’ value to -Filter parameter, along with the wild card * as shown in the image below. </p>
+                        <p> <b>Note:</b> * implies select all; in our case it is fetch all files ending with extension a common extension.</p>  
+                        <p>The syntax is:</p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput14">Get-ChildItem -Path <span  style="color: white;">"&lt;your_path &gt;" -Filter " *.txt"</span> </span>
+                        <button onclick="myFunction14()">Copy</button>
+                        </div>
+                        <div class="access-img"><img src="img/get-with-filter.JPG" class="img-fluid" alt=""></div> 
+                        
+                        <h4 id="Searching-for-a-specific">Searching for a specific file: </h4> 
+                        <p>If you are sure of the file name, then you just need to pass it to the -filter parameter to get the details of the file as shown in the image. </p>
+                        <p>The syntax is:</p> 
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput15">Get-ChildItem -Path<span  style="color: white;">" &lt; your_path &gt;" -Filter " &lt; file_name &gt;"</span> </span>
+                        <button onclick="myFunction15()">Copy</button>
+                        </div>
+                        <div class="access-img"><img src="img/get-with-filter-by-filename.JPG" alt=""></div>
+
+                        <h3 id="Using-the-Where-Object">Using the Where-Object cmdlet:</h3>
+                        <p>The Where-Object receives the data passed and filters it based on the conditions you set. For example, you can set a condition like get only those files whose size is less than 1mb as shown in the image. </p>
+                        <p>The syntax is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput16">Get-ChildItem -Path<span  style="color: white;">" &lt; folder_path &gt; " | Where-Object $_.Length -le 1mb</span> </span>
+                        <button onclick="myFunction16()">Copy</button>
+                        </div>
+                        <p><b>	Note:</b> $_. represents every individual that is being piped or looped through.</p>
+                        <div class="access-img"><img src="img/where-object-for-getting-files.JPG" class="img-fluid" alt=""></div>
+
+                        <h3 id="Using-Recurse-with-filter">Using -Recurse with -Filter: </h3>
+                        <p>Recurse with filter can be pretty effective. Because filter looks for files/folders directly under the folder you specify in the path. Whereas -Recurse also looks for files/folders present in the sub-folders too, as shown in the image. </p>
+                        <p>The syntax is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput17">Get-ChildItem <span  style="color: white;"> &lt; folder_path &gt; -Recurse -Filter *.js</span> </span>
+                        <button onclick="myFunction17()">Copy</button>
+                        </div>
+                        <p><b>Note:</b> The cmdlet looks for all files ending with .js extension within the path you specify</p>
+                        <div class="access-img"><img src="img/recurse-with-filter.JPG" class="img-fluid" alt=""></div>
+                        
+                        <h3 id="Using-Recurse-with-Where-Objec">Using -Recurse with Where-Object:</h3>
+                        <p>Recurse with Where-Object can be pretty effective. Because Where-Object looks for files/folders directly under the folder you specify in the path. Whereas -Recurse also looks for files/folders present in the sub-folders too, as shown in the image. </p>
+                        <p>The syntax is:</p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput18">Get-ChildItem <span  style="color: white;">  &lt; folder_path &gt;  -Filter *.* -Recurse | Where-Object {$_.length -gt 20kb}</span> </span>
+                        <button onclick="myFunction18()">Copy</button>
+                        </div>
+                        <p><b>Note:</b> The cmdlet looks for files within the specified path whose length is greater than 20kb.</p>
+                        <div class="access-img"><img src="img/recurse-with-where-object.JPG" class="img-fluid" alt=""></div>
+
+                        <h2 id="Creating-files-and-folders-using">Creating files and folders using New-Item cmdlet</h2>
+                        <p>New-Item cmdlet helps you create new files and folders. You have to specify <b>-Path</b> where you want the folder to be created, along with the <b>-ItemType</b> details. <b>– ItemType</b> property helps you specify whether the item being created is a<b> directory</b> (folder) or <b>file</b> as shown in the images.  </p>
+
+                        <h3 id="Creating-folder-or-folders">Creating Folders </h3>
+                        <p>The syntax for creating folder is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput19">&lt; New-Item -Path<span  style="color: white;">  “&lt; new_folder_path &gt;” -ItemType Directory</span> </span>
+                        <button onclick="myFunction19()">Copy</button>
+                        </div>
+                        <div class="access-img"><img src="img/using-new-item-to-create-folder.JPG" class="img-fluid" alt=""></div>
+                        <p><b>Note:</b> You can also create multiple folders in one go by passing in the folder paths separated by a comma as shown in the image. </p>
+                        <div class="access-img"><img src="img/using-new-item-to-create-mulitple-folders.JPG" class="img-fluid" alt=""></div>
+
+                        <h3 id="Creating-file-or-files">Creating Files </h3>
+                        <p>The syntax for creating file is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput20">New-Item -Path<span  style="color: white;">  “ &lt; folder_path &gt; / &lt; new_file_name &gt;” -ItemType File</span> </span>
+                        <button onclick="myFunction20()">Copy</button>
+                        </div> 
+                        <div class="access-img"><img src="img/using-new-item-to-create-file.JPG" class="img-fluid" alt=""></div>
+                        <p><b>Note:</b> You can also create multiple files in one go by passing in the file paths separated by a comma as shown in the image. </p> 
+                        <div class="access-img"><img src="img/using-new-item-to-create-multiple-files.JPG" class="img-fluid" alt=""></div>
+
+                        <h2 id="Copying-files-and-folders-using">Copying files and folders using Copy-Item cmdlet </h2>
+                        <p>Copy-Item cmdlet helps you copy files and folders. You should pass the path of the folders/files to be copied to <b>-Path</b> parameter and the path to which the folders/files are to be copied to the <b> -Destination</b> path as shown in the images.</p>
+
+                        <h3 id="Copying-a-single-file">Copying a single file</h3>
+                        <p>The syntax is:</p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput21">Copy-Item -Path<span  style="color: white;">"&lt;src_folder_path&gt;/&lt;file_to_be_copied&gt;" -Destination"&lt; dest_folder_path&gt;"</span> </span>
+                        <button onclick="myFunction21()">Copy</button>
+                        </div> 
+                        <div class="access-img"><img src="img/using-copy-item-to-copy-file.JPG" class="img-fluid" alt=""></div>
+                        <p><b>Note: </b>
+                            <ul>
+                                <li>You can use <b>Get-Item</b> cmdlet to check whether the file was copied or not as shown in the image above. </li>
+                                <li>Ensure the <b>-Destination</b> folder already exists. If not, cmdlet will throw errors. </li>
+                            </ul>
+                        </p>
+
+                        <h3 id="Copying-multiple-files">Copying multiple files of same pattern</h3>
+                        <p>The syntax is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput22">Copy-Item -Path<span  style="color: white;">" &lt; src_folder_path &gt; /*.txt" -Destination " &lt; dest_folder_path &gt;"</span> </span>
+                        <button onclick="myFunction22()">Copy</button>
+                        </div> 
+                        <div class="access-img"><img src="img/using-copy-item-to-copy-files.JPG" class="img-fluid" alt=""></div>
+                        <p><b>Note: </b>
+                            <ul>
+                                <li>You can use <b>Get-Item</b> cmdlet to check whether the file was copied or not as shown in the image above.  </li>
+                                <li>Ensure the<b> -Destination</b> folder already exists. If not, cmdlet will throw errors. </li>
+                                <li>In this example, all files ending with .txt extension are being copied.</li>
+                            </ul>
+                        </p>
+                        <h2 id="Moving-files-and-folders-using">Moving files and folders using Move cmdlet</h2>
+                        <p>Move-Item cmdlet helps you move files and folders. You should pass the path of the folders/files to be moved to <b>-Path</b> parameter and the path to which the folders/files are to be moved to the <b>-Destination</b> path as shown in the images.</p>
+
+                        <h3 id="Moving-a-single-file">Moving a single file </h3>
+                        <p>The syntax is:</p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput23">Move-Item -Path <span  style="color: white;">"&lt;src_folder_path&gt;/&lt;file_to_be_copied&gt;" -Destination "&lt;dest_folder_path&gt;"</span> </span>
+                        <button onclick="myFunction23()">Copy</button>
+                        </div> 
+                        <div class="access-img"><img src="img/using-move-item-to-move-file.JPG" class="img-fluid" alt=""></div>
+
+                        <h3 id="Moving-multiple-files">Moving multiple files of same pattern</h3>
+                        <p>The syntax is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput24">Move-Item -Path <span  style="color: white;">"&lt;src_folder_path&gt;/*.txt" -Destination "&lt;dest_folder_path&gt;"</span> </span>
+                        <button onclick="myFunction24()">Copy</button>
+                        </div> 
+                        <div class="access-img"><img src="img/using-move-item-to-move-files.JPG" class="img-fluid"></div>
+                        <p><b>Note:</b> Since you are moving files, source folder no longer contains the files that were moved.</p>
+
+                        <h2 id="Removing-or-deleting-files-and-folders-using-Remove-Item">Deleting or removing files and folders using Remove cmdlet</h2>
+                        <p>Remove-Item cmdlet helps you delete your files and folders. You should pass the path of the folders/files to be deleted to <b>-Path</b> parameter as shown in the images; </p>
+                        <p><b>Note:</b> Since you are deleting files, you may be required confirm your action.</p>
+
+                        <h3 id="Removing-a-single-file">Deleting a specific file </h3>
+                        <p>The syntax is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput25">Remove-Item -Path<span  style="color: white;">"&lt;src_folder_path&gt;/&lt;file_to_be_deleted&gt;"</span> </span>
+                        <button onclick="myFunction25()">Copy</button>
+                        </div> 
+                        <div class="access-img"><img src="img/using-remove-cmdlet-to-remove-file.JPG" class="img-fluid"></div>
+
+                        <h3 id="Removing-multiple-files">Deleting all files of same pattern</h3>
+                        <p>The syntax is: </p>
+                        <div class="get-item-table"><span class="bg-yellow-last" id="myInput26">Remove-Item -Path<span  style="color: white;">"&lt;src_folder_path&gt;/*.txt"</span> </span>
+                        <button onclick="myFunction26()">Copy</button>
+                        </div> 
+                        <div class="access-img"><img src="img/using-remove-cmdlet-to-remove-files.JPG" class="img-fluid" alt=""></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 banner-section-box">
+                    <div class="card banner-section-card card-1">
+                        <h3><a href="../index.html">Home</a></h3>
+                        <h3><a href="">Active Directory</a></h3>
+                        <h3><a href="">Hyper-V</a></h3>
+                        <h3><a href="powershell-index.html">PowerShell</a></h3>
+                        <h3><a href="">Free Tools</a></h3>
+                        <h3><a href="">Contact</a></h3>
+                    </div>
+                    <div class="card banner-section-card card-2">
+                        <h5>Trending News</h5><div class="line"></div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>CISA Warns of Active Exploitation of JetBrains and Windows Vulnerabilities</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Apple Rolls Out Security Patches for Actively Exploited iOS Zero-Day Flaw</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Chinese Hackers Target Semiconductor Firms in East Asia with Cobalt Strike</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Gaza-Linked Cyber Threat Actor Targets Israeli Energy and Defense Sectors
+                            </h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>GoldDigger Android Trojan Targets Banking Apps in Asia Pacific Countries</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Looney Tunables: New Linux Flaw Enables Privilege Escalation on Major Distributions
+                            </h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>New OS Tool Tells You Who Has Access to What Data</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>North Korea's Lazarus Group Launders $900 Million in Cryptocurrency</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Microsoft Warns of Cyber Attacks Attempting to Breach Cloud via SQL Server Instance</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Cisco Releases Urgent Patch to Fix Critical Flaw in Emergency Responder Systems</h1>
+                        </div>
+                    </div>
+                    <div class="card banner-section-card card-2">
+                        <h5>Popular Resources</h5><div class="line"></div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>How to Prevent an API Breach – Get Expert Strategies</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Not All SaaS is Secure - Learn How to Guard Yours with this Complete Guide</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Why Everyone's Talking About Virtual CISOs in 2023 — Exclusive Insights Inside</h1>
+                        </div>
+                        <div class="card card-2-small">
+                            <img src="https://placehold.co/200x200/" alt="">
+                            <h1>Watch Now - Expert Talk on What REALLY Matters in AI Security</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side-table-box">
+                <div class="table-content">
+                    <h5 class="menu-icon">Table of contents</h5>
+                </div>
+            </div>
+            <div class="scroll-box menu">
+                <div class="icons-scroll">
+                    <i class="bi bi-x-circle x"></i>
+                </div>
+                <h1>table-content</h1>
+                <ul>
+                    <li><a href="#Retrieving-files-and-folders">Retrieving files and folders using Get-Item and Get-ChildItem cmdlets </a>
+                        <ul>
+                            <li><a href="#Using-Get-Item">Using Get-Item </a></li>
+                            <li><a href="#Using-Get-ChildItem">Using Get-ChildItem</a></li>
+                            <li><a href="#Get-Item-Vs-Get-ChildItem">Get-Item vs Get-ChildItem difference </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Filtering-the-results">Filtering the results obtained</a>
+                        <ul>
+                            <li><a href="#Using-the-filter-parameter">Using the -filter parameter </a>
+                                <ul>
+                <li><a class="last-links" href="#Searching-for-files-of-specific-pattern">Searching files of specific pattern</a></li>
+                                    <li><a href="#Searching-for-a-specific">Searching for a specific file</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#Using-the-Where-Object">Using the Where-Object cmdlet </a></li>
+                            <li><a href="#Using-Recurse-with-filter">Using -Recurse with -filter  </a></li>
+                            <li><a href="#Using-Recurse-with-Where-Objec">Using -Recurse with Where-Object </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Creating-files-and-folders-using">Creating files and folders using New-Item cmdlet</a>
+                        <ul>
+                            <li><a href="#Creating-folder-or-folders">Creating folder or folders</a></li>
+                            <li><a href="#Creating-file-or-files">Creating file or files</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Copying-files-and-folders-using">Copying files and folders using Copy-Item cmdlet </a>
+                        <ul>
+                            <li><a href="#Copying-a-single-file">Copying a single file</a></li>
+                            <li><a href="#Copying-multiple-files">Copying multiple files</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Moving-files-and-folders-using">Moving files and folders using Move-Item cmdlet</a>
+                        <ul>
+                            <li><a href="#Moving-a-single-file">Moving a single file</a></li>
+                            <li><a href="#Moving-multiple-files">Moving multiple files </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Removing-or-deleting-files-and-folders-using-Remove-Item">Removing or deleting files and folders using Remove-Item cmdlet</a>
+                        <ul>
+                            <li><a href="#Removing-a-single-file">Removing a single file</a></li>
+                            <li><a href="#Removing-multiple-files">Removing multiple files </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn"><a href="">Next Page <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+    <div class="container-fluid footer-section">
+        <div class="container footer-section-inner">
+            <h1>Connect with us!</h1>
+            <div class="row footer-1-row">
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/twitter-icon.png" alt=""></div>
+                        <h2>900,000 Followers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/facebook.png" alt=""></div>
+                        <h2>1,950,000 Followers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/in-icon.png" alt=""></div>
+                        <h2>480,000 Followers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/youtub-icon.png" alt=""></div>
+                        <h2>20,900 Subscribers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/instagram-icon.png" alt=""></div>
+                        <h2>145,000 Followers</h2>
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 footer-box">
+                    <div class="card footer-card">
+                        <div class="img"><img src="../img/telegrame-icon.jpg" alt=""></div>
+                        <h2>115,000 Subscribers</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer-row-2">
+                <div class="col-md-3 col-6 footer-row-2-box">
+                    <div class="card footer-row-2-card">
+                        <h6>Company</h6>
+                        <ul>
+                            <li>About THN</li>
+                            <li>Advertise with us</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 footer-row-2-box">
+                    <div class="card footer-row-2-card">
+                        <h6>Pages</h6>
+                        <ul>
+                            <li>Webinars</li>
+                            <li>Deals Store</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 footer-row-2-box">
+                    <div class="card footer-row-2-card">
+                        <h6>Deals</h6>
+                        <ul>
+                            <li>Hacking</li>
+                            <li>Development</li>
+                            <li>Android</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12 footer-row-2-box">
+                    <div class="card footer-row-2-card">
+                        <a href=""><i class="fa-solid fa-wifi"></i>RSS Feeds</a>
+                        <a href=""><i class="fa-solid fa-envelope"></i>Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="line-2"></div>
+            <p>© The Hacker News, 2023. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', function () {
+            //alert('haiii')
+            document.querySelector('.menu').classList.remove('hide');
+            //alert('clicked')
+            //document.querySelector('.menu').style.transform = "translateX(-110%)";
+            document.querySelector('.menu').classList.toggle('move-menu');
+        })
+
+        document.querySelector('.x').addEventListener('click', function () {
+            document.querySelector('.menu').classList.add('hide');
+        })
+
+        // onclick event fuction 
+        function myFunction(){
+            var copyText = document.getElementById("myInput").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        
+        function myFunction11(){
+            var copyText = document.getElementById("myInput11").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction12(){
+            var copyText = document.getElementById("myInput12").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction13(){
+            var copyText = document.getElementById("myInput13").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction14(){
+            var copyText = document.getElementById("myInput14").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction15(){
+            var copyText = document.getElementById("myInput15").innerText;
+            navigator.clipboard.writeText(copyText);
+        }function myFunction16(){
+            var copyText = document.getElementById("myInput16").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction17(){
+            var copyText = document.getElementById("myInput17").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction18(){
+            var copyText = document.getElementById("myInput18").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction19(){
+            var copyText = document.getElementById("myInput19").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction20(){
+            var copyText = document.getElementById("myInput20").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction21(){
+            var copyText = document.getElementById("myInput21").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction22(){
+            var copyText = document.getElementById("myInput22").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction23(){
+            var copyText = document.getElementById("myInput23").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction24(){
+            var copyText = document.getElementById("myInput24").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction25(){
+            var copyText = document.getElementById("myInput25").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+        function myFunction26(){
+            var copyText = document.getElementById("myInput26").innerText;
+            navigator.clipboard.writeText(copyText);
+        }
+
+    </script>
+</body>
+</html>

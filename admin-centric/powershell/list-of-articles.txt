@@ -1,0 +1,43 @@
+for admin centric website == powershell category
+
+1. working with files and folders 
+     	microsoft ref: https://learn.microsoft.com/en-us/powershell/scripting/samples/working-with-files-and-folders?view=powershell-7.3 [reproduce all commands] 
+	one more: https://powershellguru.com/file-and-folder-management-using-powershell/ [for searching <filtering> ,comparing and renaming cmdlets] 
+	ref for TOC alone: https://petri.com/get-childitem/ [make dilli reproduce the same slide in TOC you see here -- same slide in TOC should be on mobile & laptop screens ] 
+
+2. creating simple GUI for PS Scripts [article -- coz feel some more reading nees to be done here] 
+	microsoft ref: https://learn.microsoft.com/en-us/powershell/scripting/samples/creating-a-custom-input-box?view=powershell-7.3
+	another ref: https://lazyadmin.nl/powershell/powershell-gui-howto-get-started/
+	article on simple PS GUI tool: https://4sysops.com/archives/powergui-create-powershell-scripts-with-a-gui/
+
+	MENTION THIS LINK: https://www.techtarget.com/searchwindowsserver/tip/Compare-these-PowerShell-front-end-GUI-tools
+	https://www.educba.com/powershell-gui/ [another userful] 
+
+	these 2 might be FUTURE USEFUL
+		
+	https://learn.microsoft.com/en-us/training/modules/use-methods-to-accept-user-inputs-windows-powershell-scripts/?source=recommendations
+	https://learn.microsoft.com/en-us/shows/gurupowershell/gui-form-using-powershell-add-panel-label-edit-box-combo-box-list-box-checkbox-more?source=recommendations
+
+3. working with (windows) objects [properties, methods, filtering, sorting -- with breif explanation of what exactly a Windows [or .Net] object is, as explained in the BASIC article] 
+	microsoft ref: https://learn.microsoft.com/en-us/powershell/scripting/samples/viewing-object-structure--get-member-?view=powershell-7.3
+	another ref: https://petri.com/powershell-objects/
+	this offers very BASIC & SIMPLE explanation: https://www.computerworld.com/article/2954261/understanding-and-using-objects-in-powershell.html [MUST READ!!!!!!] 
+
+4. outputting the ps script results
+	microsoft ref: https://learn.microsoft.com/en-us/powershell/scripting/samples/redirecting-data-with-out---cmdlets?view=powershell-7.3
+	another ref: https://www.opentechguides.com/how-to/article/powershell/223/ouput-to-file.html
+
+5. working with dates with powershell
+	microsoft ref: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.3
+	ref: https://adamtheautomator.com/powershell-get-date/
+	ref: https://lazyadmin.nl/powershell/get-date/
+
+=======================================================================================
+
+future articles: 
+
+	https://powershellguru.com/powershell-execution-policy/ [simple article on EXECUTION POLICY!!!!]
+
+
+
+
